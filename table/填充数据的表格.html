@@ -256,7 +256,7 @@
 
             // for (var i = 0; i < reduceData.length + 12; i++) {
             //     //绘画竖线
-               
+
             //         ctxReduce.moveTo(rectRW * i, 0);
             //         ctxReduce.lineTo(rectRW * i, canvasReduce.height);
             //         //绘画横线
@@ -1120,25 +1120,27 @@
         }())
 
         function colorChange(target, consult, i, j) {
-              
             var canvas = document.querySelector('#cavsElem');
             var ctx = canvas.getContext('2d');
-            //改变颜色
-            if (target > consult) {
-                ctx.fillStyle = "#ff0000";
-                // ctx.fillRect(20 * i + 15,j,44,20)
-            } else if (target < consult) {
-                ctx.fillStyle = "blue";
-            } else if (target = consult) {
-                ctx.fillStyle = "#000000";
-            }
-
+             //改变颜色
+             if (target > consult) {
+                    ctx.fillStyle = "#ff0000";
+                    ctx.strokeRect(this.j-22, 20 * i,44,20)  
+                } else if (target < consult) {
+                    ctx.fillStyle = "blue";
+                } else if (target = consult) {
+                    ctx.fillStyle = "#000000";
+             }
             //填充数据    
             if (target == '' && consult == '') {
                 ctx.fillText(target + consult, this.j, 20 * i + 15);
+                // ctx.fillStyle = "white";
             } else {
                 ctx.fillText(target + '/' + consult, this.j, 20 * i + 15);
+                
+
             }
+
 
         }
     </script>
